@@ -1,0 +1,117 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
+body{
+  background-color: #F0F0F0;
+
+  .card {
+    width: 844px;
+    padding: 58px 56px;
+    background-color: #fff;
+    border-radius: 32px 32px 216px 32px;
+    position: relative;
+    top: 16px;
+    left: calc( (100vw - 844px) /2 );
+
+    .topSection{
+      gap: 32px;
+
+      .input{
+        width: 160px;
+
+        .title {
+          color: #6F6F6F;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.8px;
+        }
+
+        .error-title{
+          color: #EC6166;
+        }
+      
+        .text {
+          margin-top: 9px;
+          margin-bottom: 9px;
+          height: 55px;
+          font-style: normal;
+          color: #121212;
+          font-size: 31px;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.48px;
+          padding: 0 24px;
+          padding-top: 4px;
+          border-radius: 8px;
+      
+          &::placeholder {
+            color: #6F6F6F;
+          }
+        }
+
+        .error{
+          border: 1px solid #B6787D;
+        }
+
+        .errorMessage{
+          color: #EC6166;
+          font-size: 14px;
+          font-style: italic;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: -0.14px;
+        }
+      }
+    }
+
+    .line{
+      margin: 49px 0;
+    }
+  }
+}
+
+
+h1.content{
+  font-size: 98px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: -1.03px;
+  color: #161616;
+  margin-right: 12px;
+}
+
+h2.content{
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 1px;
+  color: #161616;
+  text-align: center;
+  margin-top: 32px;
+}
+
+span.empty{
+  color: #8349FF;
+  font-size: 103px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 110%;
+  letter-spacing: 15.45px;
+}
+
+button.primary{
+  position: absolute;
+  right: 24px;
+  top: 136px;
+  height: 97px;
+  width: 97px;
+  padding: 0;
+}
