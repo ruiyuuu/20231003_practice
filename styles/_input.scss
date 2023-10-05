@@ -1,0 +1,72 @@
+.input {
+  width: 160px;
+
+  .title {
+    color: #6F6F6F;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.8px;
+  }
+
+  .error-title {
+    color: #EC6166;
+  }
+
+  .text {
+    margin-top: 9px;
+    margin-bottom: 9px;
+    height: 55px;
+    font-style: normal;
+    color: #121212;
+    font-size: 31px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.48px;
+    padding: 0 24px;
+    padding-top: 4px;
+    border-radius: 8px;
+
+    &::placeholder {
+      color: #6F6F6F;
+    }
+  }
+
+  .error {
+    border: 1px solid #B6787D;
+  }
+
+  .errorMessage {
+    color: #EC6166;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.14px;
+  }
+}
+
+.datepicker{
+  width: 500px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  height: 55px;
+  border-radius: 8px;
+  font-size: 31px;
+  .ant-picker-input{
+    input{
+      font-style: normal;
+      color: #121212;
+      font-size: 31px;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 2.48px;
+      padding: 0 12px;
+      padding-top: 4px;
+      &::placeholder {
+          color: #6F6F6F;
+        }
+    }
+  }
+}

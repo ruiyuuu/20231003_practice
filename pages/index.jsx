@@ -1,5 +1,6 @@
-import { Input, Divider, Button } from 'antd';
+import { Input, Divider, Button, Space } from "antd";
 import React, { useState } from 'react';
+import Layout  from '../components/layout'
 
 export default function index() {
 
@@ -7,12 +8,12 @@ export default function index() {
   const [ monthVal, setMonthVal ] = useState("")
   const [ dayVal, setDayVal ] = useState("")
   const [ yearNum , setYearNum ] = useState("--")
-  // const [ errorDayBorder, setErrorDayBorder ] = useState(false)
-  // const [ errorMonthBorder, setErrorMonthBorder ] = useState(false)
-  // const [ errorYearBorder, setErrorYearBorder ] = useState(false)
   const [ errorYear, SetErrorYear ] = useState("")
   const [ errorMonth, SetErrorMonth ] = useState("")
   const [ errorDay, SetErrorDay ] = useState("")
+  const [ date, setDate] = useState(new Date());
+    
+  
 
   const handleYear = (e) => {
     setYearVal(e.target.value)
@@ -29,12 +30,19 @@ export default function index() {
   const handleSubmit = (e) => {
     if( yearVal === "" ){
       SetErrorYear("Must be required")
-    } else if ( yearVal >= 2023){
-      SetErrorYear("Must be in the past")
+      setYearNum("--")
+    } else if (yearVal > date.getFullYear()) {
+      SetErrorYear("Must be in the past");
+      setYearNum("--");
+    } else if (yearVal === date.getFullYear()) {
+      SetErrorYear(false);
+      setYearNum("0");
+    } else if (date.getFullYear() - yearVal > 130) {
+      SetErrorYear("Must be real");
     } else {
-      SetErrorYear("")
-      SetErrorYear(false)
-      setYearNum(  2023 - yearVal)
+      SetErrorYear("");
+      SetErrorYear(false);
+      setYearNum(date.getFullYear() - yearVal);
     }
 
     if( monthVal === "" || monthVal > 12 || monthVal < 0 ){
@@ -50,8 +58,6 @@ export default function index() {
       SetErrorDay("")
       SetErrorDay(false)
     }
-
-    
   }
     
 
@@ -61,26 +67,26 @@ export default function index() {
   
 
   return (
-    <>
+    <Layout>
       <h2 className='content'>When Is Your Birthday?</h2>
       <div className='card'>
-        <space className="topSection" style={{ display: 'flex' }}>
-          <space className="input" direction="vertical">
+        <Space className="topSection" style={{ display: 'flex', alignItems:'baseline' }}>
+          <Space className="input" direction="vertical">
             <label className={ errorDay ? 'title error-title' : 'title' }>DAY</label>
             <Input className={ errorDay ? 'text error' : 'text'} placeholder="DD" value={dayVal} onChange={handleDay} required />
             <small className='errorMessage'>{errorDay}</small>
-          </space>
-          <space className="input" direction="vertical">
+          </Space>
+          <Space className="input" direction="vertical">
             <label className={ errorMonth ? 'title error-title' : 'title' }>MONTH</label>
-            <Input className={ errorMonth ? 'text error' : 'text'} placeholder="MM" value={monthVal} onChange={handleMonth} type='number' inputMode='numeric' maxLength={2} required />
+            <Input className={ errorMonth ? 'text error' : 'text'} placeholder="MM" value={monthVal} onChange={handleMonth} type='tel' inputMode='numeric' maxLength={2} required />
             <small className='errorMessage'>{errorMonth}</small>
-          </space>
-          <space className="input" direction="vertical">
+          </Space>
+          <Space className="input" direction="vertical">
             <label className={ errorYear ? 'title error-title' : 'title' }>YEAR</label>
-            <Input className={ errorYear ? 'text error' : 'text'} placeholder="YYYY" value={yearVal} onChange={handleYear} type='number' inputMode='numeric' maxLength={4} required />
+            <Input className={ errorYear ? 'text error' : 'text'} placeholder="YYYY" value={yearVal} onChange={handleYear} type='text' inputMode='numeric' maxLength={4} required />
             <small className='errorMessage'>{errorYear}</small>
-          </space>
-        </space>
+          </Space>
+        </Space>
         <Divider className='line' />
         <Button className='primary' type="submit"  onClick={handleSubmit}>
           <svg width="97" height="97" viewBox="0 0 97 97" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -88,12 +94,12 @@ export default function index() {
           <path d="M48.5 70C48.5 57.8497 38.4264 48 26 48M48.5 70C48.5 57.8497 58.5736 48 71 48M48.5 70V26.5" stroke="white" strokeWidth="2"/>
           </svg>
         </Button>
-        <space direction="vertical">
+        <Space direction="vertical">
           <h1 className='content'><span className='empty'>{yearNum}</span>years</h1>
           <h1 className='content'><span className='empty'>--</span>months</h1>
           <h1 className='content'><span className='empty'>--</span>days</h1>
-        </space>
+        </Space>
       </div>
-    </>
+    </Layout>
   )
 }
