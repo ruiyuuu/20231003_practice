@@ -11,6 +11,10 @@ export default function index_datepicker() {
   const [ birthdayVal, setBirthdayVal ] = useState("")
   const handleBirthday = (date, dateString) => {
     setBirthdayVal(date, dateString);
+    if(date !== ""){
+      setErrorBirthday(false);
+      setErrorBirthday("");
+    };
   };
   
   
@@ -93,25 +97,26 @@ export default function index_datepicker() {
               placeholder="YYYY-MM-DD"
             />
             <small className="errorMessage">{errorBirthday}</small>
+            <Button className="primary" type="submit" onClick={handleSubmit}>
+              <svg
+                width="97"
+                height="97"
+                viewBox="0 0 97 97"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="48.5" cy="48.5" r="48.5" fill="#864CFF" />
+                <path
+                  d="M48.5 70C48.5 57.8497 38.4264 48 26 48M48.5 70C48.5 57.8497 58.5736 48 71 48M48.5 70V26.5"
+                  stroke="white"
+                  strokeWidth="2"
+                />
+              </svg>
+            </Button>
           </Space>
         </Space>
         <Divider className="line" />
-        <Button className="primary" type="submit" onClick={handleSubmit}>
-          <svg
-            width="97"
-            height="97"
-            viewBox="0 0 97 97"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="48.5" cy="48.5" r="48.5" fill="#864CFF" />
-            <path
-              d="M48.5 70C48.5 57.8497 38.4264 48 26 48M48.5 70C48.5 57.8497 58.5736 48 71 48M48.5 70V26.5"
-              stroke="white"
-              strokeWidth="2"
-            />
-          </svg>
-        </Button>
+
         <Space direction="vertical">
           <h1 className="content">
             <span className="empty">{yearNum}</span>years

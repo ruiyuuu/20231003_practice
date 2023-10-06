@@ -26,3 +26,15 @@ span.empty {
   letter-spacing: 2px;
   margin-right: 24px;
 }
+
+@media (max-width: 768px) {
+  h1.content{
+    font-size: 40px;
+  }
+  h2.content{
+    font-size: 22px;
+  }
+  span.empty{
+    font-size: 40px;
+  }
+}

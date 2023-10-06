@@ -1,0 +1,34 @@
+.card {
+  width: 844px;
+  padding: 58px 56px;
+  background-color: #fff;
+  border-radius: 32px 32px 216px 32px;
+  position: relative;
+  top: 16px;
+  left: calc((100vw - 844px) /2);
+  margin-bottom: 56px;
+
+  .topSection {
+    gap: 32px;
+    position: relative;
+  }
+
+  .line {
+    margin: 49px 0;
+  }
+}
+
+
+@media (max-width:850px) {
+  .card{
+    width: auto;
+    margin: 0 16px;
+    left: calc((100vw - 100%) /2);
+    padding: 48px 24px;
+    border-radius: 32px 32px 129px 32px;
+
+    .topSection{
+      gap: 16px;
+    }
+  }
+}

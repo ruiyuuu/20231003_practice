@@ -70,3 +70,14 @@
     }
   }
 }
+
+@media (max-width:768px) {
+  .input{
+    width: auto;
+    .text{
+      font-size: 20px;
+      padding: 0 14px;
+      letter-spacing: -0.46px;
+    }
+  }
+}

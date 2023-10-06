@@ -1,7 +1,7 @@
 @import '_variable.scss';
 @import '_button.scss';
 @import '_input.scss';
-
+@import '_card.scss';
 
 
 *{
@@ -14,24 +14,6 @@
 
 body{
   background-color: #F0F0F0;
-
-  .card {
-    width: 844px;
-    padding: 58px 56px;
-    background-color: #fff;
-    border-radius: 32px 32px 216px 32px;
-    position: relative;
-    top: 16px;
-    left: calc( (100vw - 844px) /2 );
-
-    .topSection{
-      gap: 32px;
-    }
-
-    .line{
-      margin: 49px 0;
-    }
-  }
 }
 
 
